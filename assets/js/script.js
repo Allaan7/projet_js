@@ -34,16 +34,11 @@ document.querySelector("#startButton").addEventListener("click", function(evt) {
 
 function displayNextLine(){
     if(currentIndex < DIALOGUE.length) {
-
         const LINE = DIALOGUE[currentIndex];
-
         console.log(currentIndex);
         console.log(DIALOGUE[currentIndex]);
-
         const DIALOGUEBOX = document.querySelector("#dialogueBox");
-
         DIALOGUEBOX.innerHTML = "";
-
         const P = document.createElement('p');
         P.textContent = `${LINE.text}`
         DIALOGUEBOX.appendChild(P);
@@ -56,4 +51,14 @@ function displayNextLine(){
 
 document.querySelector("#nextButton").addEventListener("click" , () => {
     displayNextLine();
+})
+document.querySelector('#restartButton').addEventListener("click", () => {
+    document.getElementById("startButton").style.display = "block";
+    document.getElementById("welcomeText").style.display = "block";
+    document.getElementById("rabbitImg").style.display = "none";
+    document.getElementById("unicornImg").style.display = "none";
+    document.getElementById("dialogueBox").style.display = "none";
+    document.getElementById('restartButton').style.display = 'none';
+    document.getElementById("startButton").style.display = "inline-block"
+    currentIndex = 0;
 })
