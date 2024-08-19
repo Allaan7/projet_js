@@ -72,3 +72,29 @@ img, #dialogueBox, #nextButton, #restartButton {
 #rabbitImg.highlight{
     border: 5px solid #334df1;
 }
+
+
+@media screen and (max-width:768px){
+    .row{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10%;
+    }
+
+    #licorneImage, #lapinImage {
+        display: none; /* Caché par défaut */
+        width: 50%; /* Taille des images */
+        margin-bottom: 20px; /* Espacement en bas des images */
+        border-radius: 10px; /* Coins arrondis */
+        align-self: center;
+    }
+    
+    #container{
+        min-height: 800px;
+    }
+
+    button{
+        position: fixed;
+        bottom: 20px;
+    }
+}
