@@ -11,6 +11,9 @@ h1 {
     text-align: center;
     color: #fff;
 }
+#welcomeText {
+    color: #fff;
+}
 #container {
     text-align: center;
     margin: 20px;
