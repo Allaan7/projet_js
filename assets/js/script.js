@@ -9,6 +9,7 @@ const DIALOGUE = [
     { user: "Lapin Bug", text: "Bonne chance avec ça ! Mais n'oublie pas, là où il y a du code, il y a toujours un petit bug quelque part..." },
     { user: "Licorne Codeuse", text: "On verra bien ! En attendant, je retourne au travail... et cette fois, je suis prête à tout !" }
 ];
+let currentIndex = 0;
 
 document.querySelector("#startButton").addEventListener("click", function(evt) {
     document.getElementById("welcomeText").style.display = "none";
@@ -25,4 +26,34 @@ document.querySelector("#startButton").addEventListener("click", function(evt) {
     document.getElementById("nextButton").style.display = "inline-block";
 
     // Démarrer le dialogue
+    displayNextLine();
+
+
+
 });
+
+function displayNextLine(){
+    if(currentIndex < DIALOGUE.length) {
+
+        const LINE = DIALOGUE[currentIndex];
+
+        console.log(currentIndex);
+        console.log(DIALOGUE[currentIndex]);
+
+        const DIALOGUEBOX = document.querySelector("#dialogueBox");
+
+        DIALOGUEBOX.innerHTML = "";
+
+        const P = document.createElement('p');
+        P.textContent = `${LINE.text}`
+        DIALOGUEBOX.appendChild(P);
+        currentIndex++;
+    }else {
+        document.getElementById('nextButton').style.display = 'none';
+        document.getElementById('restartButton').style.display = 'inline-block';
+    }
+}
+
+document.querySelector("#nextButton").addEventListener("click" , () => {
+    displayNextLine();
+})
