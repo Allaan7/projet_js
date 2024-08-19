@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
-body{
+body {
     /* background: url(../img/bg.jpeg) no-repeat center fixed; */
     background-image: url(../img/bg.jpeg);
     background-size: cover;
@@ -7,12 +7,47 @@ body{
     margin: auto;
     font-family: "Quicksand", sans-serif;
 }
-#container{
+h1 {
+    text-align: center;
+    color: #fff;
+}
+#container {
     text-align: center;
     margin: 20px;
 }
-.row{
+.row {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+}
+
+#unicornImg, #rabbitImg {
+    width: 20%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+#dialogueBox {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    margin-top: 20px;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #fff;
+}
+img, #dialogueBox, #nextButton, #restartButton {
+    display: none;
 }
