@@ -54,3 +54,21 @@ button {
 img, #dialogueBox, #nextButton, #restartButton {
     display: none;
 }
+
+.unicorn {
+    color: #f11fdf;
+    padding: 10px;
+    margin: 5px 0;
+}
+.rabbit {
+    color: #334df1;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+#unicornImg.highlight{
+    border: 5px solid #f11fdf;
+}
+#rabbitImg.highlight{
+    border: 5px solid #334df1;
+}

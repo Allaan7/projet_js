@@ -34,19 +34,35 @@ document.querySelector("#startButton").addEventListener("click", function(evt) {
 
 function displayNextLine(){
     if(currentIndex < DIALOGUE.length) {
+
         const LINE = DIALOGUE[currentIndex];
+
         console.log(currentIndex);
         console.log(DIALOGUE[currentIndex]);
+
         const DIALOGUEBOX = document.querySelector("#dialogueBox");
         DIALOGUEBOX.innerHTML = "";
         const P = document.createElement('p');
         P.textContent = `${LINE.text}`
+
+        if(LINE.user === "Licorne Codeuse") {
+            P.className = 'unicorn';
+            document.getElementById('unicornImg').classList.add('highlight');
+            document.getElementById('rabbitImg').classList.remove('highlight');
+        }else if(LINE.user === "Lapin Bug") {
+            P.className = 'rabbit';
+            document.getElementById('unicornImg').classList.remove('highlight');
+            document.getElementById('rabbitImg').classList.add('highlight');
+        }
+
         DIALOGUEBOX.appendChild(P);
         currentIndex++;
     }else {
         document.getElementById('nextButton').style.display = 'none';
         document.getElementById('restartButton').style.display = 'inline-block';
     }
+
+
 }
 
 document.querySelector("#nextButton").addEventListener("click" , () => {
@@ -61,4 +77,5 @@ document.querySelector('#restartButton').addEventListener("click", () => {
     document.getElementById('restartButton').style.display = 'none';
     document.getElementById("startButton").style.display = "inline-block"
     currentIndex = 0;
+
 })
